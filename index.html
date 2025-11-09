@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inkspire Threads — Home</title>
+
+  <!-- Tailwind CDN for quick styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --accent:#bfff00; /* lime */
+      --bg:#000;       /* black */
+      --muted:#9ca3af;
+    }
+    body{background:var(--bg); color:#fff; -webkit-font-smoothing:antialiased;}
+    a{color:var(--accent);}
+    .nav a:hover{color:#fff;}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04);}
+    .btn-accent{background:linear-gradient(90deg,var(--accent), #a6f900); color:#000;}
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header / Nav -->
+  <header class="p-4 border-b border-white/5">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 rounded bg-white/5 flex items-center justify-center text-2xl font-bold" aria-hidden>IT</div>
+        <div>
+          <h1 class="text-lg font-bold">Inkspire Threads</h1>
+          <div class="text-sm text-white/60">Bold. Local. Creative.</div>
+        </div>
+      </div>
+      <nav class="nav space-x-4 text-sm">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="custom-orders.html">Custom Orders</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="business-plan.html" class="text-yellow-300">Private</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="flex-1">
+    <section class="max-w-5xl mx-auto p-6 flex flex-col md:flex-row items-center gap-6">
+      <div class="flex-1">
+        <h2 class="text-4xl md:text-5xl font-extrabold" style="color:var(--accent)">Wear Your Story</h2>
+        <p class="mt-4 text-white/80">Custom printed tees, ready-to-wear designs, and bulk orders — made in South Africa. Fast turnaround, quality materials, and a creative touch.</p>
+        <div class="mt-6 flex gap-3">
+          <a class="btn-accent py-3 px-5 rounded font-semibold shadow" href="shop.html">Shop Tees</a>
+          <a class="border border-white/10 py-3 px-5 rounded" href="custom-orders.html">Make a Custom Order</a>
+        </div>
+      </div>
+      <div class="flex-1 grid grid-cols-2 gap-3 w-full">
+        <!-- image placeholders -->
+        <div class="card p-4 rounded-lg flex items-center justify-center h-40">
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="120" height="120" fill="#0b0b0b"/>
+            <text x="50%" y="50%" fill="#bfff00" font-size="12" font-family="Arial" text-anchor="middle" alignment-baseline="middle">T-SHIRT</text>
+          </svg>
+        </div>
+        <div class="card p-4 rounded-lg h-40 flex items-center justify-center">Image</div>
+        <div class="card p-4 rounded-lg h-40 flex items-center justify-center">Image</div>
+        <div class="card p-4 rounded-lg h-40 flex items-center justify-center">Image</div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="max-w-5xl mx-auto p-6 grid md:grid-cols-3 gap-4">
+      <div class="card p-4 rounded-lg">
+        <h3 class="font-bold text-lg" style="color:var(--accent)">Custom Printing</h3>
+        <p class="text-white/80 mt-2">DTF, vinyl and sublimation — we print your ideas with care.</p>
+      </div>
+      <div class="card p-4 rounded-lg">
+        <h3 class="font-bold text-lg" style="color:var(--accent)">Fast Turnaround</h3>
+        <p class="text-white/80 mt-2">Local production allows quick delivery and pickup.</p>
+      </div>
+      <div class="card p-4 rounded-lg">
+        <h3 class="font-bold text-lg" style="color:var(--accent)">Bulk Orders</h3>
+        <p class="text-white/80 mt-2">Special pricing for events, schools, and companies.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 p-6 mt-6">
+    <div class="max-w-5xl mx-auto text-sm text-white/60 flex flex-col md:flex-row justify-between">
+      <div>© Inkspire Threads — Proudly South African</div>
+      <div class="mt-3 md:mt-0">Owners: Christian & Jano — <a href="contact.html">Contact</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Custom Orders — Inkspire Threads</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>:root{--accent:#bfff00;--bg:#000} body{background:var(--bg); color:#fff}</style>
+</head>
+<body class="min-h-screen">
+  <header class="p-4 max-w-5xl mx-auto"><a href="index.html">← Back</a></header>
+
+  <main class="max-w-3xl mx-auto p-6">
+    <h1 class="text-3xl font-bold" style="color:var(--accent)">Custom Orders</h1>
+    <p class="text-white/70 mt-2">Fill this form and we’ll get back within 24–48 hours.</p>
+
+    <form id="customForm" class="mt-6 space-y-4">
+      <div>
+        <label class="block text-sm text-white/80">Full Name</label>
+        <input required class="w-full p-3 rounded bg-white/5" name="name"/>
+      </div>
+
+      <div>
+        <label class="block text-sm text-white/80">Email or WhatsApp</label>
+        <input required class="w-full p-3 rounded bg-white/5" name="contact"/>
+      </div>
+
+      <div>
+        <label class="block text-sm text-white/80">Order Type</label>
+        <select name="type" class="w-full p-3 rounded bg-white/5">
+          <option>Single Custom Tee</option>
+          <option>Bulk Order (10+)</option>
+          <option>Corporate/Branding</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm text-white/80">Upload Design (optional)</label>
+        <input type="file" accept="image/*" class="w-full p-3 rounded bg-white/5" />
+      </div>
+
+      <div>
+        <label class="block text-sm text-white/80">Notes</label>
+        <textarea name="notes" class="w-full p-3 rounded bg-white/5" rows="4" placeholder="Sizes, colors, deadline..."></textarea>
+      </div>
+
+      <div class="flex gap-3">
+        <button type="submit" class="btn-accent px-4 py-2 rounded">Submit Request</button>
+        <button type="reset" class="px-4 py-2 rounded border">Reset</button>
+      </div>
+
+      <p id="msg" class="text-white/70 mt-2"></p>
+    </form>
+  </main>
+
+  <footer class="border-t border-white/5 p-6 text-white/60 max-w-3xl mx-auto">© Inkspire Threads</footer>
+
+  <script>
+    // Demo form handler (no server). Replace with fetch to backend or email API when ready.
+    document.getElementById('customForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('msg').textContent = 'Thanks! Your request has been saved locally. We will contact you soon.';
+      // optionally store in localStorage
+      const data = new FormData(e.target);
+      let stored = JSON.parse(localStorage.getItem('inkspire_customs') || '[]');
+      let obj = Object.fromEntries(data.entries());
+      stored.push({timestamp: Date.now(), ...obj});
+      localStorage.setItem('inkspire_customs', JSON.stringify(stored));
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

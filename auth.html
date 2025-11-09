@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Private Access — Inkspire Threads</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>:root{--accent:#bfff00;--bg:#000} body{background:var(--bg); color:#fff}</style>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+  <div class="max-w-md w-full p-6 card rounded">
+    <h1 class="text-2xl font-bold" style="color:var(--accent)">Private Access</h1>
+    <p class="text-white/70 mt-2">Enter the site password to view the business plan and financials.</p>
+
+    <form id="loginForm" class="mt-4">
+      <input id="pw" type="password" placeholder="Password" class="w-full p-3 rounded bg-white/5"/>
+      <div class="mt-4 flex justify-between">
+        <button type="submit" class="btn-accent px-4 py-2 rounded">Unlock</button>
+        <a href="index.html" class="px-4 py-2 rounded border">Back</a>
+      </div>
+    </form>
+    <p id="error" class="text-sm text-red-400 mt-3 hidden">Wrong password. Try again.</p>
+    <p class="text-xs text-white/60 mt-3">Tip: change the password inside the script if you want a custom one.</p>
+  </div>
+
+  <script>
+    // DEFAULT PASSWORD: change in the private pages also if you edit them
+    const SITE_PASSWORD = "Inkspire2025";
+
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const v = document.getElementById('pw').value;
+      if(v === SITE_PASSWORD){
+        localStorage.setItem('inkspire_authed','1');
+        // redirect to business plan main private page
+        window.location.href = 'business-plan.html';
+      } else {
+        document.getElementById('error').classList.remove('hidden');
+      }
+    });
+
+    // If already authed, go straight to business plan
+    if(localStorage.getItem('inkspire_authed') === '1'){
+      window.location.href = 'business-plan.html';
+    }
+  </script>
+</body>
+</html>

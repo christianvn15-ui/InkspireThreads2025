@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Financials — Inkspire Threads</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>:root{--accent:#bfff00;--bg:#000} body{background:var(--bg); color:#fff}</style>
+</head>
+<body class="min-h-screen">
+  <script>
+    if(localStorage.getItem('inkspire_authed') !== '1'){ window.location.href = 'auth.html'; }
+  </script>
+
+  <header class="p-4 max-w-5xl mx-auto flex justify-between">
+    <h1 class="text-xl font-bold">Financials — Inkspire Threads</h1>
+    <a class="px-3 py-1 border rounded" href="#" onclick="localStorage.removeItem('inkspire_authed'); window.location.href='auth.html'">Logout</a>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6">
+    <section class="card p-4 rounded">
+      <h2 class="font-bold">Projected Profit & Loss (Year 1)</h2>
+      <table class="w-full mt-4 text-left text-sm">
+        <thead><tr><th>Item</th><th>Amount (ZAR)</th></tr></thead>
+        <tbody>
+          <tr><td>Revenue</td><td>R396,000</td></tr>
+          <tr><td>Cost of Goods Sold</td><td>R220,000</td></tr>
+          <tr><td>Gross Profit</td><td>R176,000</td></tr>
+          <tr><td>Operating Expenses</td><td>R80,000</td></tr>
+          <tr><td>Net Profit</td><td>R96,000</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card p-4 rounded mt-4">
+      <h2 class="font-bold">Owner Profit Split</h2>
+      <p class="mt-2 text-white/80">Christian: 50% — R48,000 (Year 1 example)<br>Jano: 50% — R48,000 (Year 1 example)</p>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/5 p-6 text-white/60 max-w-5xl mx-auto">© Inkspire Threads — Private</footer>
+</body>
+</html>
