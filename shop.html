@@ -77,20 +77,16 @@
     }
 
     function checkout() {
-      if(cart.length === 0){
-        alert('Your cart is empty!');
-        return;
-      }
-      let summary = "Your Order:\n";
-      cart.forEach(item => {
-        summary += `${item.name} - R${item.price}\n`;
-      });
-      const total = cart.reduce((sum, item) => sum + item.price, 0);
-      summary += `Total: R${total}\n\nThank you for shopping at Inkspire Threads!`;
-      alert(summary);
-      cart = [];
-      updateCart();
-    }
+  if(cart.length === 0){
+    alert('Your cart is empty!');
+    return;
+  }
+
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+  // Redirect to PayFast with total amount
+  window.location.href = `https://www.payfast.co.za/eng/process?merchant_id=YOUR_ID&amount=${total}&item_name=Inkspire%20Threads%20Order`;
+}
   </script>
 </body>
 </html>
