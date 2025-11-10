@@ -67,6 +67,17 @@
       localStorage.setItem('inkspire_customs', JSON.stringify(stored));
       e.target.reset();
     });
+    
+    document.getElementById('msg').innerHTML = `
+  Thanks! Your request has been saved.<br>
+  Please make payment via EFT to:<br><br>
+  <strong>Inkspire Threads</strong><br>
+  Bank: FNB<br>
+  Account No: 1234567890<br>
+  Branch Code: 250655<br>
+  Reference: Your Name + Order Type<br><br>
+  We’ll confirm your order once payment reflects.
+`;
   </script>
 </body>
 </html>
